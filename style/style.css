@@ -51,12 +51,33 @@ table {
   width: 75%;
   margin: 0 auto; }
 
-.date {
+h6 {
   color: #C0C0C0;
   float: left; }
 
-.time {
+h3 {
   color: #1E90FF;
   float: left; }
+
+.container {
+  width: 75%;
+  margin: 0 auto; }
+
+.line {
+  height: 2000px;
+  width: 12px;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 200px; }
+
+.date-time-container {
+  position: absolute;
+  top: 25px;
+  left: 40px; }
+  .date-time-container h6 {
+    color: #C0C0C0; }
+  .date-time-container h3 {
+    color: #1E90FF; }
 
 /*# sourceMappingURL=style.css.map */

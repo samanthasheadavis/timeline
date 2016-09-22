@@ -1,3 +1,37 @@
-
+// imports
 @import "partials/reset";
 @import "partials/event";
+
+//variables
+
+
+//mixins
+
+//body
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.line {
+  height: 2000px;
+  width: 12px;
+  background: black;
+  position:absolute;
+  top: 0;
+  left: 200px;
+}
+
+.date-time-container {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+
+  h6 {
+    color: #C0C0C0;
+  }
+
+  h3 {
+    color: #1E90FF;
+  }
+}
