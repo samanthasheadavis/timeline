@@ -1,37 +1,209 @@
 // imports
-@import "partials/reset";
-@import "partials/event";
+ @import "partials/reset";
+// @import "partials/event";
 
 //variables
-
+$lineblue: #AFDCF8;
+$evenblue: #3594CB; //even-numbered items have a darker blue color scheme
+$oddblue: #6CBFEE; //odd-number items have a lighter blue color scheme
+$gray: #BED3E3;
+$font:'Roboto', sans-serif;
+$transition: all 1s ease;
 
 //mixins
+@mixin iconCircle ($size, $color) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background: $color;
+}
 
-//body
+@mixin media ($bp) {
+  @media only screen and (max-width: $bp) {
+     @content;
+   }
+}
+
+//General Styles
 .container {
-  width: 75%;
+  width: 60%;
   margin: 0 auto;
+  padding: 5%;
+
+  @include media (768px) {
+  width: 80%;
+  margin-left: 80px;
+  }
+
+  @include media (650px) {
+    margin-left: 68px;
+  }
+
+  @include media (400px) {
+  margin-top: 10%;
+  margin-left: 7%;
+  }
+}
+
+li {
+  position: relative;
+  font-family: $font;
 }
 
 .line {
-  height: 2000px;
-  width: 12px;
-  background: black;
+  height: 106%;
+  width: 8px;
+  background: $lineblue;
   position:absolute;
   top: 0;
-  left: 200px;
+  left: 0px;
+  margin: 0;
+  transition: $transition;
+
+  @include media (400px) {
+    height: 132%;
+  }
 }
 
-.date-time-container {
+.date {
+  color: $gray;
+  font-size: 14px;
   position: absolute;
-  top: 25px;
-  left: 40px;
+  left: -9%;
+  top: 0;
+  transition: $transition;
 
-  h6 {
-    color: #C0C0C0;
+  @include media (1250px) {
+    transform: translateX(-50%);
   }
 
-  h3 {
-    color: #1E90FF;
+  @include media (540px) {
+    transform: translateX(-84%);
+  }
+
+  @include media (400px) {
+    top: -25%;
+    transform: translateX(150%);
   }
 }
+
+.time {
+  color: $oddblue;
+  font-size: 25px;
+  position: absolute;
+  left: -12%;
+  top: 12%;
+  transition: $transition;
+
+  @include media (1250px) {
+    transform: translateX(-50%);
+  }
+
+  @include media (540px) {
+    transform: translateX(-60%);
+  }
+
+  @include media (400px) {
+    top: -17%;
+    transform: translateX(150%);
+  }
+}
+
+.content {
+  padding: 3%;
+  margin-left: 6%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+  color: white;
+  transition: $transition;
+
+  @include media (650px) {
+    margin-left: 8%;
+  }
+
+  @include media (400px) {
+    margin-bottom: 14%;
+    margin-left: 10%;
+  }
+}
+
+.content-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 2%;
+  padding-bottom: 1%;
+  border-bottom: 1px solid $gray;
+}
+
+.triangle {
+  position: absolute;
+  top: 7%;
+  left: 4%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 15px 10px 0;
+  transition: $transition;
+
+  @include media (650px) {
+    transform: translateX(50%);
+  }
+
+  @include media (400px) {
+    transform: translateX(50%);
+  }
+}
+
+.content-description {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.circle {
+  position: absolute;
+  left: -13px;
+  @include iconCircle (35px, $lineblue);
+}
+
+.innerCircle {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  @include iconCircle (25px, $evenblue);
+}
+
+.icon {
+  text-align: center;
+  padding: 4px;
+  }
+//Item Styles
+
+.item1 {
+  .content {
+    background: $oddblue;
+  }
+  .triangle {
+    border-color: transparent $oddblue transparent transparent;
+  }
+}
+
+.item2 {
+  .content {
+    background: $evenblue;
+  }
+  .triangle {
+    border-color: transparent $evenblue transparent transparent;
+  }
+}
+
+.item3 {
+  .content {
+    background: $oddblue;
+  }
+
+  .triangle {
+    border-color: transparent $oddblue transparent transparent;
+  }
+}
+
+//Resizing
