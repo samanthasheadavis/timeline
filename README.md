@@ -1,4 +1,4 @@
-# Calculator
+# Timeline
 #### Week 2 Day 3 Homework
 
 For this homework I used HTML, CSS and Sass to build and style a responsive timeline.
